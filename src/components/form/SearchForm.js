@@ -16,7 +16,6 @@ export const SearchForm = ({ handleOnAddToList }) => {
     const movie = await fetchMovie(search);
     setMovie(movie.data);
   };
-  console.log(movie);
 
   return (
     <>
@@ -40,7 +39,10 @@ export const SearchForm = ({ handleOnAddToList }) => {
       <Row>
         <Col className="d-flex justify-content-center mt-3">
           {movie.Response === "True" && (
-            <CustomCard movie={movie} fun={handleOnAddToList}></CustomCard>
+            <CustomCard
+              movie={movie}
+              handleOnAddToList={handleOnAddToList}
+            ></CustomCard>
           )}
           {movie.Response === "False" && (
             <Alert variant="danger">{movie.Error}</Alert>
