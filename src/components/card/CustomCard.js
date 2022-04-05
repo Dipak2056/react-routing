@@ -14,9 +14,11 @@ export const CustomCard = ({
         <Card.Body>
           <Card.Title>{movie?.title}</Card.Title>
           <Card.Text>
-            Rating:{movie?.imdbRating}
-            Directed by:{movie?.Director}
-            Writer:{movie?.Writer}
+            <ul>
+              <li> Rating: {movie?.imdbRating}</li>
+              <li> Directed by: {movie?.Director}</li>
+              <li>Writer: {movie?.Writer}</li>
+            </ul>
           </Card.Text>
           {btnDelete ? (
             <Button
